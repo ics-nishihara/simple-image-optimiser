@@ -2,7 +2,7 @@
 簡易なSquooshを使った画像最適化ツールです。`images`フォルダに画像を格納し各種`npm scripts`を実行するとdistフォルダに最適化された画像が出力されます。
 
 # scripts
-- `convert-all`：jpg・pngをwebpに変換します。
+- `convert-all`：jpg・pngをwebpに変換します。
 - `convert-jpg-to-webp`：jpgをwebpに変換します。
 - `convert-png-to-webp`：pngをwebpに変換します。
 - `optimise-jpg`：jpgを最適化します。
