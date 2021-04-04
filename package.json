@@ -5,10 +5,10 @@
   "author": "ics-nishihara <nishihara@ics-web.jp>",
   "scripts": {
     "convert-all":"yarn run convert-jpg-to-webp || yarn run convert-png-to-webp",
-    "convert-jpg-to-webp": "yarn run squoosh-cli --webp 0.75 images/*.jpg -d dist",
-    "convert-png-to-webp": "yarn run squoosh-cli --webp 0.75 images/*.png -d dist",
-    "optimise-jpg": "yarn run squoosh-cli --mozjpeg 0.75 images/*.jpg -d dist",
-    "optimise-png": "yarn run squoosh-cli --oxipng 2 images/*.png -d dist"
+    "convert-jpg-to-webp": "yarn run squoosh-cli --webp '{quality: 75}' images/*.jpg -d dist",
+    "convert-png-to-webp": "yarn run squoosh-cli --webp '{quality: 75}' images/*.png -d dist",
+    "optimise-jpg": "yarn run squoosh-cli --mozjpeg '{quality: 75}' images/*.jpg -d dist",
+    "optimise-png": "yarn run squoosh-cli --oxipng '{level: 2}' images/*.png -d dist"
   },
   "dependencies": {
     "@squoosh/cli": "0.6.3"
