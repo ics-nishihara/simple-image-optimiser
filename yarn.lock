@@ -9,6 +9,11 @@
   dependencies:
     web-streams-polyfill "^3.0.0"
 
+parallelshell@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/parallelshell/-/parallelshell-3.0.1.tgz#0587ce1535350543916d8f3d329fbfa4a0355f22"
+  integrity sha512-xsSQGhJTFjbSW3WGsnSFTg1G17dcDU+gMH7bWxjAiy/3H579KPFbSp3fhkZ+jx2wcZuoav46nq+QVX0I0xPcyA==
+
 web-streams-polyfill@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.0.2.tgz#402061089a61a2465457938abaa1b9e4db1bcc0f"
