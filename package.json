@@ -1,0 +1,16 @@
+{
+  "name": "simple-image-optimiser",
+  "version": "1.0.0",
+  "repository": "git@github.com:ics-nishihara/simple-image-optimiser.git",
+  "author": "ics-nishihara <nishihara@ics-web.jp>",
+  "scripts": {
+    "convert-all":"yarn run convert-jpg-to-webp || yarn run convert-png-to-webp",
+    "convert-jpg-to-webp": "yarn run squoosh-cli --webp 0.75 images/*.jpg -d dist",
+    "convert-png-to-webp": "yarn run squoosh-cli --webp 0.75 images/*.png -d dist",
+    "jpg": "yarn run squoosh-cli --mozjpeg 0.75 images/*.jpg -d dist",
+    "png": "yarn run squoosh-cli --oxipng 2 images/*.png -d dist"
+  },
+  "dependencies": {
+    "@squoosh/cli": "0.6.3"
+  }
+}
