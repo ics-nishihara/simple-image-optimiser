@@ -3,6 +3,7 @@
 
 # scripts
 - `convert-all`：jpg・pngをwebpに変換します。
+- `optimise-all`：jpg・pngを最適化します。
 - `convert-jpg-to-webp`：jpgをwebpに変換します。
 - `convert-png-to-webp`：pngをwebpに変換します。
 - `optimise-jpg`：jpgを最適化します。
