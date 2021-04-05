@@ -6,13 +6,14 @@
   "scripts": {
     "convert-all": "parallelshell -w \"yarn run convert-jpg-to-webp\" \"yarn run convert-png-to-webp\"",
     "optimise-all": "parallelshell -w \"yarn run optimise-jpg\" \"yarn run optimise-png\"",
-    "convert-jpg-to-webp": "yarn run squoosh-cli --webp '{quality: 75}' images/*.jpg -d dist",
+    "convert-jpg-to-webp": "yarn run squoosh-cli --webp '{quality: 75}' images/sample.jpg images/sampleのコピー.jpeg -d dist",
     "convert-png-to-webp": "yarn run squoosh-cli --webp '{quality: 75}' images/*.png -d dist",
     "optimise-jpg": "yarn run squoosh-cli --mozjpeg '{quality: 75}' images/*.jpg -d dist",
     "optimise-png": "yarn run squoosh-cli --oxipng '{level: 2}' images/*.png -d dist"
   },
   "dependencies": {
-    "@squoosh/cli": "0.6.3"
+    "@squoosh/cli": "0.6.3",
+    "fs-extra": "9.1.0"
   },
   "devDependencies": {
     "parallelshell": "3.0.1"
