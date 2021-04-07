@@ -10,6 +10,4 @@
 - `optimise-png`：pngを最適化します。
 
 # その他
-jpg,WebPのクオリティ設定は`75`、pngは`level:2`に設定してあります。変更したい場合は`npm scripts`のコマンドの`{}`内の引数の値を変更してください。
-
-`images`フォルダ内に当該拡張子のなくスクリプトを実行した場合はエラーが出ます。`convert-all`した場合、エラー自体は出ますが、処理自体は止まりません。
+jpg,WebPのクオリティ設定は`75`、pngは`level:2`に設定してあります。変更したい場合は`npm scripts`のコマンドの`node index.js convert-all-to-webp`の後ろに`high`,`moderate`,`low`,`very-low`のキーワードをつけてください。より細かい設定をしたい場合は…index.jsの64行目付近のクオリティ設定の値を編集してください。
