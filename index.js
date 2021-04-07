@@ -77,6 +77,7 @@ switch (qualitySetting) {
   case "very-low":
     qualityOption.quality = 30;
     qualityOption.level = 1;
+    break;
   default:
     qualityOption.quality = 75;
     qualityOption.level = 2;
