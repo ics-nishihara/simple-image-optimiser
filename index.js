@@ -90,7 +90,7 @@ const start = async () => {
     case "convert-all-to-webp":
       console.log("すべての画像をWebPに変換します");
       await execPromise(
-        `yarn run squoosh-cli --webp '{quality: ${qualityOption.quality}}' ${allFilePathList} -d dist`
+        `yarn run squoosh-cli --webp '{quality:${qualityOption.quality}}' ${allFilePathList} -d dist`
       );
       break;
     case "optimise-all":
