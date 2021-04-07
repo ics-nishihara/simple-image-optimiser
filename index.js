@@ -97,35 +97,35 @@ const start = async () => {
       console.log("すべての画像を圧縮します");
       await Promise.all([
         execPromise(
-          `yarn run squoosh-cli --mozjpeg '{quality: ${qualityOption.quality}}' ${jpgFilePathList} -d dist`
+          `yarn run squoosh-cli --mozjpeg '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
         ),
         execPromise(
-          `yarn run squoosh-cli --oxipng '{level: ${qualityOption.level}}' ${pngFilePathList} -d dist`
+          `yarn run squoosh-cli --oxipng '{level:${qualityOption.level}}' ${pngFilePathList} -d dist`
         ),
       ]);
       break;
     case "convert-jpg-to-webp":
       console.log("jpg画像をWebPに変換します");
       await execPromise(
-        `yarn run squoosh-cli --webp '{quality: ${qualityOption.quality}}' ${jpgFilePathList} -d dist`
+        `yarn run squoosh-cli --webp '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
       );
       break;
     case "convert-png-to-webp":
       console.log("png画像をWebPに変換します");
       await execPromise(
-        `yarn run squoosh-cli --webp '{quality: ${qualityOption.quality}}' ${pngFilePathList} -d dist`
+        `yarn run squoosh-cli --webp '{quality:${qualityOption.quality}}' ${pngFilePathList} -d dist`
       );
       break;
     case "optimise-jpg":
       console.log("jpg画像を圧縮します");
       await execPromise(
-        `yarn run squoosh-cli --mozjpeg '{quality: ${qualityOption.quality}}' ${jpgFilePathList} -d dist`
+        `yarn run squoosh-cli --mozjpeg '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
       );
       break;
     case "optimise-png":
       console.log("png画像を圧縮します");
       await execPromise(
-        `yarn run squoosh-cli --oxipng '{level: ${qualityOption.level}}' ${pngFilePathList} -d dist`
+        `yarn run squoosh-cli --oxipng '{level:${qualityOption.level}}' ${pngFilePathList} -d dist`
       );
       break;
     default:
