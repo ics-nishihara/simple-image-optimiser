@@ -1,6 +1,6 @@
 {
   "name": "simple-image-optimiser",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": "git@github.com:ics-nishihara/simple-image-optimiser.git",
   "author": "ics-nishihara <nishihara@ics-web.jp>",
   "scripts": {
