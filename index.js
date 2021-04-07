@@ -89,41 +89,77 @@ const start = async () => {
   switch (mode) {
     case "convert-all-to-webp":
       console.log("すべての画像をWebPに変換します");
+      if (allFilePathList.length === 0) {
+        console.warn("画像がないようです");
+        process.exit();
+      }
       await execPromise(
         `yarn run squoosh-cli --webp '{quality:${qualityOption.quality}}' ${allFilePathList} -d dist`
       );
       break;
     case "optimise-all":
       console.log("すべての画像を圧縮します");
-      await Promise.all([
-        execPromise(
-          `yarn run squoosh-cli --mozjpeg '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
-        ),
-        execPromise(
+      if (jpgFilePathList.length > 0 && pngFilePathList.length > 0) {
+        await Promise.all([
+          execPromise(
+            `yarn run squoosh-cli --mozjpeg '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
+          ),
+          execPromise(
+            `yarn run squoosh-cli --oxipng '{level:${qualityOption.level}}' ${pngFilePathList} -d dist`
+          ),
+        ]);
+      } else if (jpgFilePathList.length === 0 && pngFilePathList.length > 0) {
+        await execPromise(
           `yarn run squoosh-cli --oxipng '{level:${qualityOption.level}}' ${pngFilePathList} -d dist`
-        ),
-      ]);
+        );
+      } else if (jpgFilePathList.length > 0 && pngFilePathList.length === 0) {
+        await execPromise(
+          `yarn run squoosh-cli --mozjpeg '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
+        );
+      } else {
+        console.warn("画像がないようです");
+        process.exit();
+      }
+
       break;
     case "convert-jpg-to-webp":
       console.log("jpg画像をWebPに変換します");
+      if (jpgFilePathList.length === 0) {
+        console.warn("画像がないようです");
+        process.exit();
+      }
       await execPromise(
         `yarn run squoosh-cli --webp '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
       );
+
       break;
     case "convert-png-to-webp":
       console.log("png画像をWebPに変換します");
+      if (pngFilePathList.length === 0) {
+        console.warn("画像がないようです");
+        process.exit();
+      }
       await execPromise(
         `yarn run squoosh-cli --webp '{quality:${qualityOption.quality}}' ${pngFilePathList} -d dist`
       );
+
       break;
     case "optimise-jpg":
       console.log("jpg画像を圧縮します");
+      if (jpgFilePathList.length === 0) {
+        console.warn("画像がないようです");
+        process.exit();
+      }
       await execPromise(
         `yarn run squoosh-cli --mozjpeg '{quality:${qualityOption.quality}}' ${jpgFilePathList} -d dist`
       );
       break;
     case "optimise-png":
       console.log("png画像を圧縮します");
+      if (pngFilePathList.length === 0) {
+        console.warn("画像がないようです");
+        process.exit();
+      }
       await execPromise(
         `yarn run squoosh-cli --oxipng '{level:${qualityOption.level}}' ${pngFilePathList} -d dist`
       );
